@@ -62,6 +62,7 @@ export class CheckpointRepostitory {
 	 * @return {Promise<import('$lib/entity/checkpoint').Checkpoint>}
 	 */
 	create = async (checkpoint) => {
+		checkpoint.lastUpdated = new Date();
 		const transaction = this.#db.transaction(CHECKPOINT_DB_STORE, 'readwrite');
 		if (!transaction) {
 			throw new Error('Transaction is null');
@@ -144,6 +145,7 @@ export class CheckpointRepostitory {
 	 * @param {import('$lib/entity/checkpoint').Checkpoint} checkpoint
 	 */
 	update = async (checkpoint) => {
+		checkpoint.lastUpdated = new Date();
 		const transaction = this.#db.transaction(CHECKPOINT_DB_STORE, 'readwrite');
 		if (!transaction) {
 			throw new Error('Transaction is null');

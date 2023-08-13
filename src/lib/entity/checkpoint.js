@@ -9,5 +9,6 @@ export class Checkpoint {
 		this.id = id;
 		this.name = '';
 		this.url = '';
+		this.lastUpdated = new Date();
 	}
 }

@@ -24,4 +24,6 @@
 	<title>Checkpoint</title>
 </svelte:head>
 
-<CheckpointList {checkpoints} />
+<div class="w-full my-4 p-6 bg-base-100">
+	<CheckpointList {checkpoints} />
+</div>
